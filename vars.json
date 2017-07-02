@@ -1,0 +1,13 @@
+{
+    "region": "us-west-2",
+    "source_ami": "ami-26d2c35f",
+    "inst_type": "t2.micro",
+    "ssh_username": "centos",
+    "subnet_id": "subnet-5521cc0e",
+    "securitygroup_id": "sg-e707899c",
+    "ami_name": "ASOEL73MinSec",
+    "ami_description": "Oracle_Linux_7.3_MinSec",
+    "ami_role": "StanfordUpdateDNS",
+    "userdata": "userdata-minsec.sh",
+    "creator": "Toai_Vo"
+}

@@ -1,0 +1,29 @@
+{
+  "builders": [{
+    "type": "amazon-ebs",
+    "access_key": "{{user `$AWS_ACCESS_KEY_ID`}}",
+    "secret_key": "{{user `$AWS_SECRET_ACCESS_KEY`}}",
+    "region": "{{user `region`}}",
+    "source_ami": "{{user `source_ami`}}",
+    "instance_type": "{{user `inst_type`}}",
+    "ssh_username": "{{user `ssh_username`}}",
+    "subnet_id": "{{user `subnet_id`}}",
+    "associate_public_ip_address": "true",
+    "security_group_id": "{{user `securitygroup_id`}}",
+    "iam_instance_profile": "{{user `iam_role`}}",
+    "ami_name": "{{user `ami_name`}}",
+    "run_tags": {
+        "Name": "{{user `ami_name`}}",
+        "Creator": "{{user `creator`}}"
+        },
+    "tags": {
+        "Name": "{{user `ami_name`}}",
+        "Creator": "{{user `creator`}}"
+        },
+    "ami_description": "{{user `ami_description`}}"
+  }],
+  "provisioners": [{
+    "type": "shell",
+    "script": "{{user `userdata`}}"
+    }]
+}
